@@ -1,0 +1,1 @@
+{"version":3,"sources":["one.scss","two.scss"],"names":[],"mappings":"AAEA;EACA,eAHA;EAIA,WAAA,EAAA;;AAIA;EAEA,WAAA,EAAA;;ACVA;EACA,wBAAA,EAAA","file":"../../styles.css","sourcesContent":["$red :red;\n\nbody {\n    background:$red;\n    color:blue;\n   \n}\n\n.container {\n    p {\n        color:blue;\n    }\n}\n",".container {\n    border:10px solid white;\n}"]}
