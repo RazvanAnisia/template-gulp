@@ -12,7 +12,8 @@ sass.compiler = require('node-sass');
 
 
 function compile(){
-  return src('src/*js', { sourcemaps: true })
+  return src([ 'node_modules/babel-polyfill/dist/polyfill.js',
+              'src/*js'], { sourcemaps: true })
   //puts everything in one file
   .pipe(concat('main.js'))
   .pipe(babel({
