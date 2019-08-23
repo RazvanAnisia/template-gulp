@@ -1,1 +1,1 @@
-"use strict";var age=22,calculateAge=function(){var e=2*age;return console.log(e),e};calculateAge();var dodel=[1,2,3,4,4,5],results=dodel.filter(function(e){return 3<e});console.log(results);
+"use strict";var age=22,calculateAge=function(){alert("Omg this works");var e=2*age;return console.log(e),e};calculateAge();var dodel=[1,2,3,4,4,5],results=dodel.filter(function(e){return 3<e});console.log(results);

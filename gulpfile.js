@@ -6,10 +6,9 @@ const concat = require('gulp-concat')
 const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+let cleanCSS = require('gulp-clean-css');
 
 sass.compiler = require('node-sass');
-
-
 
 
 function compile(){
@@ -31,6 +30,7 @@ function compileCSS(){
   .pipe(autoprefixer({}))
   //enabling sourcemaps
   .pipe(sourcemaps.write('./src/css'))  
+  .pipe(cleanCSS({compatibility: 'ie8'}))
   .pipe(dest('output/'))
 }
 
