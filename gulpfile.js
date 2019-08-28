@@ -7,6 +7,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 let cleanCSS = require('gulp-clean-css');
+const imagemin = require('gulp-imagemin');
 
 sass.compiler = require('node-sass');
 
@@ -35,10 +36,22 @@ function compileCSS(){
   .pipe(dest('output/'))
 }
 
+function minifyImages(){
+  return src(['./src/img/*'])
+  .pipe(imagemin([
+    imagemin.gifsicle({interlaced: true}),
+    imagemin.jpegtran({progressive: true}),
+    imagemin.optipng({optimizationLevel: 7})
+  ]))
+  .pipe(gulp.dest('output/img/'))
+}
 gulp.task ('watch', function() {
   gulp.watch('src/*js', compile)
-  gulp.watch('src/css/*.scss', compileCSS)
+  gulp.watch('src/css/*.scss', compileCSS) 
 })
 
+gulp.task('minifyImages', function(){
+  return minifyImages()
+})
 
 
